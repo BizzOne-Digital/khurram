@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <title>Zerotrace Executive</title>
+  <path d="M16 2L4 6v10c0 7.5 5.2 14.5 12 16 6.8-1.5 12-8.5 12-16V6L16 2z" fill="#0F2537" stroke="#D4AF37" stroke-width="1.5"/>
+  <path d="M11 10h6l-4 4h3l-5 6v-4h-3l4-6z" fill="#D4AF37"/>
+  <path d="M18 10h3v12h-3V10z" fill="#123A5A"/>
+</svg>

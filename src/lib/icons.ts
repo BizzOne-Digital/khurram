@@ -1,0 +1,46 @@
+import {
+  Home,
+  KeyRound,
+  FileSearch,
+  Crown,
+  Rocket,
+  Users,
+  Gem,
+  EyeOff,
+  Search,
+  ListOrdered,
+  MessageSquare,
+  ShieldCheck,
+  MapPin,
+  Database,
+  Footprints,
+  Eye,
+  FileText,
+  Shield,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+export const iconMap: Record<string, LucideIcon> = {
+  home: Home,
+  keyRound: KeyRound,
+  fileSearch: FileSearch,
+  crown: Crown,
+  rocket: Rocket,
+  users: Users,
+  gem: Gem,
+  eyeOff: EyeOff,
+  search: Search,
+  listOrdered: ListOrdered,
+  messageSquare: MessageSquare,
+  shieldCheck: ShieldCheck,
+  mapPin: MapPin,
+  database: Database,
+  footprints: Footprints,
+  eye: Eye,
+  fileText: FileText,
+  shield: Shield,
+};
+
+export function getIcon(name: string): LucideIcon {
+  return iconMap[name] ?? Shield;
+}
