@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { AuditRequestModal } from "@/components/AuditRequestModal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { StickyAuditCTA } from "@/components/StickyAuditCTA";
 import { LoadingSequence } from "@/components/LoadingSequence";
 
@@ -29,6 +30,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       </div>
       <AuditRequestModal />
       <StickyAuditCTA />
+      <ScrollToTop />
     </AuditModalProvider>
   );
 }

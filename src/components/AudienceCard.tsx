@@ -16,7 +16,7 @@ export function AudienceCard({ audience, index }: AudienceCardProps) {
 
   return (
     <motion.article
-      className="gold-border-glow glass-panel rounded-lg p-5 sm:p-6 text-center w-full min-w-0"
+      className="premium-card gold-border-glow rounded-xl p-5 sm:p-6 text-center w-full min-w-0"
       initial={reducedMotion ? undefined : { opacity: 0, scale: 0.95 }}
       whileInView={reducedMotion ? undefined : { opacity: 1, scale: 1 }}
       viewport={{ once: true }}

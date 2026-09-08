@@ -47,7 +47,7 @@ export default function RootLayout({
               logo: "https://ztshield.ca/logo.png",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+1-416-720-8752",
+                telephone: "+1-289-224-9770",
                 contactType: "customer service",
                 email: "info@ztshield.ca",
                 areaServed: "CA",

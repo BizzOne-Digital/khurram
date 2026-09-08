@@ -12,6 +12,7 @@ interface AuditModalContextValue {
   isOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
+  scrollToIntake: () => void;
 }
 
 const AuditModalContext = createContext<AuditModalContextValue | null>(null);
@@ -22,8 +23,17 @@ export function AuditModalProvider({ children }: { children: ReactNode }) {
   const openModal = useCallback(() => setIsOpen(true), []);
   const closeModal = useCallback(() => setIsOpen(false), []);
 
+  const scrollToIntake = useCallback(() => {
+    const el = document.getElementById("request-audit");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      setIsOpen(true);
+    }
+  }, []);
+
   return (
-    <AuditModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <AuditModalContext.Provider value={{ isOpen, openModal, closeModal, scrollToIntake }}>
       {children}
     </AuditModalContext.Provider>
   );

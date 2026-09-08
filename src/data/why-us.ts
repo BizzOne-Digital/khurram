@@ -41,6 +41,24 @@ export const whyUsItems: WhyUsItem[] = [
       "Services are delivered through our Ontario operating entity with local accountability and discretion.",
     icon: "mapPin",
   },
+  {
+    title: "Doxxing Protection",
+    description:
+      "We identify and reduce publicly exposed personal data that could enable harassment, stalking, or targeted threats against you and your family.",
+    icon: "shieldAlert",
+  },
+  {
+    title: "Corporate Boardroom Security",
+    description:
+      "Extend governance-grade privacy beyond the corporate perimeter — protecting directors and executives whose personal exposure creates enterprise liability.",
+    icon: "building",
+  },
+  {
+    title: "Executive Travel Safety",
+    description:
+      "Assess how travel patterns, location data, and public filings can compromise executive safety — with actionable steps to reduce visibility while on the move.",
+    icon: "plane",
+  },
 ];
 
 export const principles = [

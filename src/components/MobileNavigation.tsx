@@ -3,13 +3,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone } from "lucide-react";
 import { navLinks } from "@/data/navigation";
-import { contact } from "@/data/contact";
 import { useAuditModal } from "@/context/AuditModalContext";
 import { MagneticButton } from "./MagneticButton";
 import { ShieldLogo } from "./ShieldLogo";
-import { formatPhoneLink, cn } from "@/lib/utils";
+import { PhoneLinkPlain } from "./PhoneLink";
+import { cn } from "@/lib/utils";
 
 interface MobileNavigationProps {
   isOpen: boolean;
@@ -43,7 +42,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
           >
             <div className="flex flex-col h-full pt-24 px-6 pb-8">
               <div className="mb-8">
-                <ShieldLogo size="md" />
+                <ShieldLogo size="lg" showText />
               </div>
 
               <nav className="flex-grow space-y-1" aria-label="Mobile navigation">
@@ -69,13 +68,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
               </nav>
 
               <div className="space-y-4 mt-8">
-                <a
-                  href={`tel:${formatPhoneLink(contact.phone)}`}
-                  className="flex items-center justify-center gap-2 py-3 text-ivory border border-gold/30 rounded-sm"
-                >
-                  <Phone className="w-4 h-4 text-gold" />
-                  {contact.phone}
-                </a>
+                <PhoneLinkPlain className="flex items-center justify-center gap-2 py-3 text-ivory border border-gold/30 rounded-sm w-full" />
                 <MagneticButton onClick={handleAuditClick} variant="primary" className="w-full">
                   Request Confidential Audit
                 </MagneticButton>

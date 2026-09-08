@@ -12,17 +12,22 @@ export function ProcessTimeline({ vertical = false }: { vertical?: boolean }) {
       className={
         vertical
           ? "relative space-y-8 pl-14 sm:pl-16 border-l border-gold/20 ml-1 overflow-hidden"
-          : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
       }
     >
       {processSteps.map((step, i) => (
         <motion.div
           key={step.step}
-          className="relative"
+          className={
+            vertical
+              ? "relative"
+              : "premium-card gold-border-glow p-6 sm:p-8 relative"
+          }
           initial={reducedMotion ? undefined : { opacity: 0, y: 30 }}
           whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: i * 0.15 }}
+          transition={{ delay: i * 0.12 }}
+          whileHover={reducedMotion || vertical ? undefined : { y: -4 }}
         >
           {vertical && (
             <div className="absolute left-0 top-0 -translate-x-1/2">
@@ -31,16 +36,20 @@ export function ProcessTimeline({ vertical = false }: { vertical?: boolean }) {
           )}
 
           {!vertical && (
-            <div className="mb-4">
+            <div className="mb-5">
               <SecurityRing step={step.step} />
             </div>
           )}
 
-          <span className="label-caps text-gold/60 mb-1 block">
+          <span className="label-caps text-gold/60 mb-2 block">
             Phase {step.step}
           </span>
-          <h3 className="font-display text-2xl text-ivory mb-2">{step.title}</h3>
+          <h3 className="font-display text-xl sm:text-2xl text-ivory mb-2">{step.title}</h3>
           <p className="text-steel text-sm leading-relaxed">{step.description}</p>
+
+          {!vertical && i < processSteps.length - 1 && (
+            <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-gold/20" aria-hidden="true" />
+          )}
         </motion.div>
       ))}
     </div>

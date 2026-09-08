@@ -3,6 +3,9 @@ import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { PricingCard } from "@/components/PricingCard";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
+import { FAQSection } from "@/components/FAQSection";
+import { SampleReportShowcase } from "@/components/SampleReportShowcase";
+import { AuditIntakeSection } from "@/components/AuditIntakeSection";
 import { ConfidentialCTA } from "@/components/ConfidentialCTA";
 import { SecureGrid } from "@/components/SecureGrid";
 import { auditPricing, retainerPricing } from "@/data/pricing";
@@ -81,6 +84,10 @@ export default function PricingPage() {
           <LegalDisclaimer text={pricingDisclaimer} size="md" />
         </div>
       </section>
+
+      <SampleReportShowcase />
+      <FAQSection />
+      <AuditIntakeSection />
 
       <ConfidentialCTA />
     </div>

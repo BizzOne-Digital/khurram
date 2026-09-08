@@ -1,5 +1,6 @@
 import { SectionReveal } from "@/components/SectionReveal";
 import { AnimatedHeading } from "@/components/AnimatedHeading";
+import Image from "next/image";
 import { AudienceCard } from "@/components/AudienceCard";
 import { ConfidentialCTA } from "@/components/ConfidentialCTA";
 import { SecureGrid } from "@/components/SecureGrid";
@@ -7,6 +8,7 @@ import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { audiences } from "@/data/audiences";
 import { principles } from "@/data/why-us";
 import { legalDisclaimer } from "@/data/contact";
+import { images } from "@/data/images";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata(
@@ -41,9 +43,18 @@ const aboutSections = [
 export default function AboutPage() {
   return (
     <div className="w-full max-w-full overflow-x-clip">
-      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-x-clip w-full">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-x-clip w-full min-h-[50vh] flex items-center">
+        <Image
+          src={images.executivePortrait}
+          alt=""
+          fill
+          className="object-cover object-top"
+          priority
+          sizes="100vw"
+          aria-hidden="true"
+        />
         <SecureGrid />
-        <div className="absolute inset-0 bg-gradient-to-b from-sapphire/20 to-midnight" />
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/70 via-midnight/85 to-midnight" />
         <div className="relative max-w-4xl mx-auto section-pad text-center w-full">
           <SectionReveal>
             <AnimatedHeading as="h1" className="text-3xl sm:text-4xl lg:text-6xl mb-6 sm:mb-8">
@@ -60,13 +71,38 @@ export default function AboutPage() {
       </section>
 
       <section className="py-12 sm:py-16 lg:py-24 overflow-x-clip w-full">
-        <div className="max-w-4xl mx-auto section-pad space-y-10 sm:space-y-16 w-full">
+        <div className="max-w-7xl mx-auto section-pad w-full">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12 sm:mb-16">
+            <SectionReveal>
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <Image
+                  src={images.consultation}
+                  alt="Confidential executive cybersecurity consultation"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </SectionReveal>
+            <SectionReveal delay={0.1}>
+              <h2 className="font-display text-2xl sm:text-3xl text-ivory mb-4">
+                Discretion You Can Trust
+              </h2>
+              <p className="text-steel leading-relaxed">
+                Every engagement begins with a confidential consultation — clear findings,
+                executive-friendly guidance, and absolute discretion at every step.
+              </p>
+            </SectionReveal>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-10 sm:space-y-16 w-full">
           {aboutSections.map((section, i) => (
             <SectionReveal key={section.title} delay={i * 0.1}>
               <h2 className="font-display text-2xl sm:text-3xl text-ivory mb-3 sm:mb-4">{section.title}</h2>
               <p className="text-steel leading-relaxed">{section.content}</p>
             </SectionReveal>
           ))}
+          </div>
         </div>
       </section>
 

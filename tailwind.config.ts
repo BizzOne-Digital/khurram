@@ -35,6 +35,9 @@ const config: Config = {
         "pulse-gold": "pulse-gold 3s ease-in-out infinite",
         "grid-flow": "grid-flow 20s linear infinite",
         shimmer: "shimmer 2s linear infinite",
+        float: "float 6s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 4s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 4s ease infinite",
       },
       keyframes: {
         "radar-sweep": {
@@ -52,6 +55,18 @@ const config: Config = {
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0) scale(1)" },
+          "50%": { transform: "translateY(-12px) scale(1.02)" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "0.8" },
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% center" },
+          "50%": { backgroundPosition: "100% center" },
         },
       },
     },

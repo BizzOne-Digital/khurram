@@ -17,6 +17,12 @@ import {
   Eye,
   FileText,
   Shield,
+  UserCheck,
+  HeartHandshake,
+  Cpu,
+  ShieldAlert,
+  Building2,
+  Plane,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -39,6 +45,12 @@ export const iconMap: Record<string, LucideIcon> = {
   eye: Eye,
   fileText: FileText,
   shield: Shield,
+  userCheck: UserCheck,
+  heartHandshake: HeartHandshake,
+  cpu: Cpu,
+  shieldAlert: ShieldAlert,
+  building: Building2,
+  plane: Plane,
 };
 
 export function getIcon(name: string): LucideIcon {

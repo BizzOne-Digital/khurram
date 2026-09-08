@@ -1,16 +1,24 @@
-import { HeroSection } from "@/components/HeroSection";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import { ConfidentialityBanner } from "@/components/ConfidentialityBanner";
+import { StatsSection } from "@/components/StatsSection";
+import { ServiceSelection } from "@/components/ServiceSelection";
+import { ProtectionPillars } from "@/components/ProtectionPillars";
+import { PlatformShowcase } from "@/components/PlatformShowcase";
 import { SectionReveal } from "@/components/SectionReveal";
 import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { RiskCard } from "@/components/RiskCard";
-import { ExposureMap } from "@/components/ExposureMap";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { PricingCard } from "@/components/PricingCard";
 import { AudienceCard } from "@/components/AudienceCard";
+import { ResourcesSection } from "@/components/ResourcesSection";
+import { MediaLogos } from "@/components/MediaLogos";
+import { SampleReportShowcase } from "@/components/SampleReportShowcase";
+import { WhyUsGrid } from "@/components/WhyUsGrid";
+import { FAQSection } from "@/components/FAQSection";
+import { AuditIntakeSection } from "@/components/AuditIntakeSection";
+import { ConfidentialCTA } from "@/components/ConfidentialCTA";
 import { RedactedTextReveal } from "@/components/RedactedTextReveal";
 import { SecureGrid } from "@/components/SecureGrid";
-import { ConfidentialCTA } from "@/components/ConfidentialCTA";
-import { WhyUsGrid } from "@/components/WhyUsGrid";
 import { risks } from "@/data/risks";
 import { audiences } from "@/data/audiences";
 import { auditPricing, retainerPricing } from "@/data/pricing";
@@ -26,8 +34,23 @@ export const metadata = createPageMetadata(
 export default function HomePage() {
   return (
     <div className="w-full max-w-full overflow-x-clip">
-      <HeroSection />
+      <HeroCarousel />
       <ConfidentialityBanner />
+      <StatsSection />
+      <ServiceSelection />
+      <ProtectionPillars />
+      <PlatformShowcase />
+      <SampleReportShowcase />
+
+      <section className="py-12 sm:py-16 bg-sapphire/20 border-y border-gold/10 overflow-x-clip w-full">
+        <div className="max-w-2xl mx-auto section-pad text-center w-full">
+          <p className="label-caps text-gold/60 mb-4">Sensitive Data Detected</p>
+          <RedactedTextReveal
+            sensitiveText="John Executive — 142 Maple Ridge Dr, Toronto ON — spouse: Sarah Executive — breached credentials: 3 accounts"
+            redactedLabel="████ █████████ — ███ █████ ████ ██, ███████ ██"
+          />
+        </div>
+      </section>
 
       <section className="relative py-16 sm:py-24 lg:py-32 overflow-x-clip w-full">
         <SecureGrid className="opacity-50" />
@@ -51,27 +74,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-sapphire/20 border-y border-gold/10 overflow-x-clip w-full">
-        <div className="max-w-2xl mx-auto section-pad text-center w-full">
-          <p className="label-caps text-gold/60 mb-4">Sensitive Data Detected</p>
-          <RedactedTextReveal
-            sensitiveText="John Executive — 142 Maple Ridge Dr, Toronto ON — spouse: Sarah Executive — breached credentials: 3 accounts"
-            redactedLabel="████ █████████ — ███ █████ ████ ██, ███████ ██"
-          />
-        </div>
-      </section>
-
       <section className="py-16 sm:py-24 lg:py-32 overflow-x-clip w-full">
         <div className="max-w-7xl mx-auto section-pad w-full">
           <SectionReveal className="text-center mb-10 sm:mb-16">
-            <AnimatedHeading className="text-2xl sm:text-3xl lg:text-5xl mb-4">
-              How Exposure Connects
+            <p className="section-eyebrow justify-center">Why Zerotrace Executive</p>
+            <AnimatedHeading className="text-2xl sm:text-3xl lg:text-5xl">
+              Governance, Safety & Discretion
             </AnimatedHeading>
-            <p className="text-steel text-sm sm:text-base max-w-2xl mx-auto">
-              Separate data points can combine to form a comprehensive executive profile.
-            </p>
           </SectionReveal>
-          <ExposureMap />
+          <WhyUsGrid />
         </div>
       </section>
 
@@ -123,6 +134,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <FAQSection />
+
       <section className="py-16 sm:py-24 lg:py-32 bg-sapphire/10 overflow-x-clip w-full">
         <div className="max-w-7xl mx-auto section-pad w-full">
           <SectionReveal className="text-center mb-10 sm:mb-16">
@@ -139,17 +152,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 lg:py-32 overflow-x-clip w-full">
-        <div className="max-w-7xl mx-auto section-pad w-full">
-          <SectionReveal className="text-center mb-10 sm:mb-16">
-            <AnimatedHeading className="text-2xl sm:text-3xl lg:text-5xl">
-              Why Zerotrace Executive
+      <section className="py-12 sm:py-16 border-t border-gold/10 overflow-x-clip w-full">
+        <div className="max-w-4xl mx-auto section-pad text-center w-full">
+          <SectionReveal>
+            <p className="label-caps text-gold/50 mb-6">Want to know more?</p>
+            <AnimatedHeading className="text-2xl sm:text-3xl lg:text-4xl mb-4">
+              Get in touch and schedule a confidential consultation
             </AnimatedHeading>
+            <p className="text-steel text-sm sm:text-base">
+              Book a demonstration or request a callback to see Zerotrace Executive in action.
+            </p>
           </SectionReveal>
-          <WhyUsGrid />
         </div>
       </section>
 
+      <ResourcesSection />
+      <MediaLogos />
+
+      <AuditIntakeSection />
       <ConfidentialCTA />
     </div>
   );
