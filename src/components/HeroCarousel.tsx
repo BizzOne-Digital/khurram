@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { heroSlides } from "@/data/hero-slides";
-import { ShieldLogo } from "./ShieldLogo";
 import { MagneticButton } from "./MagneticButton";
 import { useAuditModal } from "@/context/AuditModalContext";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -92,15 +91,6 @@ export function HeroCarousel() {
       <div className="absolute inset-0 secure-grid-bg opacity-15" aria-hidden="true" />
 
       <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24">
-        <motion.div
-          className="mb-6 sm:mb-8 lg:mb-10"
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <ShieldLogo size="hero" />
-        </motion.div>
-
         <div className="max-w-2xl lg:max-w-3xl">
           <AnimatePresence mode="wait">
             <motion.div
