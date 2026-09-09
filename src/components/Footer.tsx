@@ -43,7 +43,7 @@ export function Footer() {
       <div className="relative border-b border-white/5">
         <div className="max-w-7xl mx-auto section-pad py-10 sm:py-12 text-center w-full">
           <p className="label-caps text-gold/50 mb-2">Protect Your Digital Life</p>
-          <ShieldLogo size="lg" showText className="justify-center" />
+          <ShieldLogo size="lg" className="justify-center" />
         </div>
       </div>
 

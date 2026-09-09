@@ -42,7 +42,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
           >
             <div className="flex flex-col h-full pt-24 px-6 pb-8">
               <div className="mb-8">
-                <ShieldLogo size="lg" showText />
+                <ShieldLogo size="lg" />
               </div>
 
               <nav className="flex-grow space-y-1" aria-label="Mobile navigation">

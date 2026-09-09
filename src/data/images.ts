@@ -1,5 +1,5 @@
 export const images = {
-  logo: "/logo.svg",
+  logo: "/logo.png",
   heroBackground: "/images/hero-background.jpg",
   heroSlide1: "/images/hero-slide-1.jpg",
   heroSlide2: "/images/hero-slide-2.jpg",

@@ -67,13 +67,13 @@ export function Header() {
         )}
       >
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-          <div className="flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between h-[72px] sm:h-[76px] lg:h-[96px] xl:h-[100px] gap-4">
+          <div className="flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between h-[80px] sm:h-[88px] lg:h-[100px] xl:h-[104px] gap-4">
             <Link
               href="/"
               className="relative z-10 justify-self-start"
               aria-label="Zerotrace Executive Home"
             >
-              <ShieldLogo size="header" showText variant="header" />
+              <ShieldLogo size="header" variant="header" />
             </Link>
 
             <nav
